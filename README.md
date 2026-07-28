@@ -169,45 +169,39 @@ src/
 
 ---
 
-## Live site — yogeshghogareai.in
+## Deploy on Vercel — yogeshghogareai.in
 
-This project is configured to deploy to **GitHub Pages** with the custom domain **[yogeshghogareai.in](https://yogeshghogareai.in)**.
+This project is set up for **Vercel** (`vercel.json` handles the Vite build + React Router SPA).
 
-### What is already in the repo
+### 1. Import the repo
 
-| File | Purpose |
-|------|---------|
-| `public/CNAME` | Tells GitHub Pages to use `yogeshghogareai.in` |
-| `.github/workflows/deploy.yml` | Builds and deploys on every push to `main` |
-| `vercel.json` | SPA rewrites (optional Vercel deploy) |
-| `public/_redirects` | SPA fallback for Netlify |
+1. Go to [vercel.com/new](https://vercel.com/new)
+2. Import **YogiG1996/YogeshGPortfolio**
+3. Framework Preset: **Vite** (auto-detected)
+4. Build Command: `npm run build` · Output: `dist`
+5. Click **Deploy**
 
-### After the first push — enable Pages
+You’ll get a URL like `https://yogesh-g-portfolio.vercel.app`.
 
-1. Open [YogeshGPortfolio Settings → Pages](https://github.com/YogiG1996/YogeshGPortfolio/settings/pages)
-2. Under **Build and deployment**, set Source to **GitHub Actions**
-3. Wait for the Actions workflow to finish (green check)
+### 2. Add custom domain
 
-### DNS records (domain registrar)
+1. Open the project in Vercel → **Settings → Domains**
+2. Add `yogeshghogareai.in` and `www.yogeshghogareai.in`
+3. Follow Vercel’s DNS instructions (shown in the UI)
 
-You must own `yogeshghogareai.in` and point it to GitHub Pages.
-
-**Apex domain (`yogeshghogareai.in`)** — add these **A** records:
+Typical records:
 
 | Type | Name | Value |
 |------|------|--------|
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
+| A | `@` | `76.76.21.21` |
+| CNAME | `www` | `cname.vercel-dns.com` |
 
-**Optional `www`** — add a **CNAME**:
+(Use the exact values Vercel shows for your project if they differ.)
 
-| Type | Name | Value |
-|------|------|--------|
-| CNAME | `www` | `YogiG1996.github.io` |
+### 3. After DNS
 
-DNS can take a few minutes to 48 hours. In GitHub Pages settings, confirm **Custom domain** shows `yogeshghogareai.in` and enable **Enforce HTTPS** once the certificate is ready.
+Wait for DNS propagation, then enable HTTPS in Vercel (usually automatic).  
+Every push to `main` will redeploy automatically.
 
 ### Local production build
 
