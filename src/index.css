@@ -1,0 +1,142 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-primary-dark text-white antialiased transition-colors duration-300;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  body.light {
+    @apply bg-primary-light text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Syne', sans-serif;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #00f5d4;
+    border-radius: 4px;
+  }
+  .light ::-webkit-scrollbar-thumb { background: #0052cc; }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-24 px-5 sm:px-8 lg:px-16 xl:px-24;
+  }
+
+  .label {
+    @apply font-mono text-[11px] tracking-[0.22em] uppercase;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border transition-colors duration-300;
+  }
+
+  .dark .surface-card {
+    @apply bg-surface-dark/80 border-white/[0.06];
+  }
+
+  .light .surface-card {
+    @apply bg-white border-gray-200/80 shadow-sm;
+  }
+}
+
+@layer utilities {
+  .text-accent-solid {
+    color: #00f5d4;
+  }
+  .light .text-accent-solid {
+    color: #0052cc;
+  }
+
+  .mesh-bg {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0, 245, 212, 0.08), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 20%, rgba(56, 120, 255, 0.06), transparent 50%),
+      linear-gradient(180deg, #060d1f 0%, #0a1224 100%);
+  }
+
+  .light .mesh-bg {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0, 82, 204, 0.08), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 90% 20%, rgba(14, 165, 233, 0.06), transparent 50%),
+      linear-gradient(180deg, #f0f4ff 0%, #e8eefc 100%);
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(0, 245, 212, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 212, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
+  }
+
+  .light .grid-overlay {
+    background-image:
+      linear-gradient(rgba(0, 82, 204, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 82, 204, 0.05) 1px, transparent 1px);
+  }
+}
+
+/* Blog typography */
+.blog-content h2 {
+  @apply text-xl sm:text-2xl font-display font-bold mt-8 mb-3;
+}
+.dark .blog-content h2 { color: #00f5d4; }
+.light .blog-content h2 { color: #0052cc; }
+
+.blog-content h3 {
+  @apply text-lg font-display font-semibold mt-6 mb-2;
+}
+.dark .blog-content h3 { @apply text-white/80; }
+.light .blog-content h3 { @apply text-gray-800; }
+
+.blog-content p {
+  @apply mb-4 leading-relaxed;
+}
+.dark .blog-content p { @apply text-white/65; }
+.light .blog-content p { @apply text-gray-700; }
+
+.blog-content ul,
+.blog-content ol {
+  @apply mb-4 pl-5 space-y-1;
+}
+.blog-content li {
+  @apply leading-relaxed list-disc;
+}
+.dark .blog-content li { @apply text-white/65; }
+.light .blog-content li { @apply text-gray-700; }
+.blog-content ol li { @apply list-decimal; }
+
+.blog-content strong {
+  @apply font-semibold;
+}
+.dark .blog-content strong { @apply text-white; }
+.light .blog-content strong { @apply text-gray-900; }
+
+.blog-content pre {
+  @apply my-4 p-4 rounded-xl overflow-x-auto text-sm leading-relaxed;
+}
+.dark .blog-content pre {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 245, 212, 0.12);
+}
+.light .blog-content pre {
+  background: #f1f5f9;
+  border: 1px solid rgba(0, 82, 204, 0.12);
+}
+.dark .blog-content code { color: #00f5d4; }
+.light .blog-content code { color: #0052cc; }
