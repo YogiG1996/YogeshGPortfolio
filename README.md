@@ -169,43 +169,43 @@ src/
 
 ---
 
-## Deploy on Vercel — yogeshghogareai.in
+## Deploy on GitHub Pages
 
-This project is set up for **Vercel** (`vercel.json` handles the Vite build + React Router SPA).
+Site URL after setup: **https://YogiG1996.github.io/YogeshGPortfolio/**
 
-### 1. Import the repo
+### One-time setup
 
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import **YogiG1996/YogeshGPortfolio**
-3. Framework Preset: **Vite** (auto-detected)
-4. Build Command: `npm run build` · Output: `dist`
-5. Click **Deploy**
+1. Open [Pages settings](https://github.com/YogiG1996/YogeshGPortfolio/settings/pages)
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+3. Push to `main` (or re-run the **Deploy to GitHub Pages** workflow under Actions)
 
-You’ll get a URL like `https://yogesh-g-portfolio.vercel.app`.
+The workflow runs `npm run build:gh-pages` (Vite `base` = `/YogeshGPortfolio/`) and publishes `dist`.
 
-### 2. Add custom domain
+### Optional custom domain (yogeshghogareai.in)
 
-1. Open the project in Vercel → **Settings → Domains**
-2. Add `yogeshghogareai.in` and `www.yogeshghogareai.in`
-3. Follow Vercel’s DNS instructions (shown in the UI)
-
-Typical records:
+1. Add a `public/CNAME` file containing `yogeshghogareai.in`
+2. In Pages settings → Custom domain → enter `yogeshghogareai.in`
+3. At your registrar, add GitHub Pages **A** records:
 
 | Type | Name | Value |
 |------|------|--------|
-| A | `@` | `76.76.21.21` |
-| CNAME | `www` | `cname.vercel-dns.com` |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `YogiG1996.github.io` |
 
-(Use the exact values Vercel shows for your project if they differ.)
+4. Switch the build base to `/` when using an apex custom domain (update `build:gh-pages` to `vite build --base=/`).
 
-### 3. After DNS
+---
 
-Wait for DNS propagation, then enable HTTPS in Vercel (usually automatic).  
-Every push to `main` will redeploy automatically.
+## Deploy on Vercel (optional)
+
+`vercel.json` still works. Import the repo at [vercel.com/new](https://vercel.com/new) — use `npm run build` (base `/`). Vercel and GitHub Pages can both stay connected.
 
 ### Local production build
 
 ```bash
-npm run build
-# Output in /dist
+npm run build            # base /  (Vercel / local)
+npm run build:gh-pages   # base /YogeshGPortfolio/ (GitHub Pages)
 ```

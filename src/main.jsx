@@ -5,9 +5,12 @@ import { ThemeProvider } from './context/ThemeContext'
 import App from './App'
 import './index.css'
 
+// Vite sets BASE_URL from `base` (e.g. "/" or "/YogeshGPortfolio/")
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ThemeProvider>
         <App />
       </ThemeProvider>

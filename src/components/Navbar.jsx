@@ -34,7 +34,8 @@ export default function Navbar() {
     if (href.startsWith('/#')) {
       const id = href.slice(2)
       if (location.pathname !== '/') {
-        window.location.href = href
+        // Respect Vite base path on GitHub Pages (e.g. /YogeshGPortfolio/#about)
+        window.location.href = `${import.meta.env.BASE_URL}#${id}`
         return
       }
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })

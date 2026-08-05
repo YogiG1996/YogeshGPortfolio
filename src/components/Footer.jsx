@@ -51,7 +51,7 @@ export default function Footer() {
               ) : (
                 <a
                   key={label}
-                  href={href}
+                  href={`${import.meta.env.BASE_URL}${href.replace(/^\//, '')}`}
                   className={`text-xs transition-colors ${
                     isDark
                       ? 'text-white/35 hover:text-accent-dark'

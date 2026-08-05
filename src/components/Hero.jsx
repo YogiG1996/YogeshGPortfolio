@@ -127,7 +127,7 @@ export default function Hero() {
           {/* CTA group */}
           <motion.div variants={item} className="flex flex-wrap gap-3">
             <a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               download
               className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold transition-transform hover:-translate-y-0.5 active:translate-y-0 ${
                 isDark
