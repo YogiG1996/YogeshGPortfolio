@@ -17,7 +17,7 @@ export const personal = {
   email:    'ghogareyogesh2015@gmail.com',
   phone:    '(+91) 8329222473',
   linkedin: 'https://www.linkedin.com/in/yogesh-ghogare-159b40104',
-  github:   'https://github.com/yogeshghogare',
+  github:   'https://github.com/YogiG1996',
   experienceLabel: '6 Years 10 Months',
   bio: [
     'QA Automation Engineer with 6+ years of expertise in building scalable test automation frameworks using Python, Playwright, Appium, and Pytest for web, mobile, and API testing.',
