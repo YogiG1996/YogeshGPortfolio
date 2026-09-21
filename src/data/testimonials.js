@@ -26,9 +26,9 @@ export const testimonials = [
   {
     id:       3,
     quote:    "Yogesh brings a rare combination of engineering rigor, creative AI thinking, and strong communication skills. Collaborating with him on automation and quality initiatives was always productive and insightful.",
-    name:     'Jyoti Prakash',
-    title:    'Team Lead',
-    company:  'Amdocs',
+    name:     'Girija Todankar',
+    title:    'Automation Specialist',
+    company:  'NICE',
     linkedin: '#',
     initials: 'GT',
     color:    'pink',
